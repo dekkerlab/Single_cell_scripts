@@ -3,10 +3,10 @@
 
 mkdir zUMI_reads_150
 
-for condition in Fix-c-1127-G1 Fix-c-1127-proM; #add your condition here (example):
+for condition in Fix-c-1127-G1 Fix-c-1127-proM; #add your conditions here ("Fix-c-1127-G1"as an example):
 do
   #trim PolyA
-  for i in {1..48}; #here can be changed according how many cells
+  for i in {1..48}; #here can be changed according to how many cells in this condition
   do
     java -jar /home/huox/software/trimmomatic/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 \
     ${condition}-${i}_R1_001.fastq.gz ${condition}-${i}_R2_001.fastq.gz \
