@@ -1,0 +1,46 @@
+project: fix_w_trimA150_0918
+sequence_files:
+  file1:
+    name: /mnt/dekkerlab_genomics/xiangru/SSC/0918_conditions/fix_whole/zUMI_trimA_150/reads_for_zUMIs.R1.fastq.gz
+    base_definition:
+    - cDNA(23-150)
+    - UMI(12-19)
+    find_pattern: ATTGCGCAATG
+  file2:
+    name: /mnt/dekkerlab_genomics/xiangru/SSC/0918_conditions/fix_whole/zUMI_trimA_150/reads_for_zUMIs.index.fastq.gz
+    base_definition: BC(1-8)
+reference:
+  STAR_index: /data/xiangru/reference_fasta/hg38/STAR_2.7.3a_15/
+  GTF_file: /data/xiangru/reference_fasta/hg38/gencode.v29.annotation.gtf
+  additional_STAR_params: ''
+  additional_files: ~
+out_dir: //mnt/dekkerlab_genomics/xiangru/SSC/0918_conditions/fix_whole/zUMI_single_end_150
+num_threads: 8
+mem_limit: 50
+filter_cutoffs:
+  BC_filter:
+    num_bases: 3
+    phred: 20
+  UMI_filter:
+    num_bases: 2
+    phred: 20
+barcodes:
+  barcode_num: ~
+  barcode_file: /mnt/dekkerlab_genomics/xiangru/SSC/0918_conditions/fix_whole/zUMI_trimA_150/reads_for_zUMIs.samples.txt
+  automatic: no
+  BarcodeBinning: 0
+  nReadsperCell: 100
+counting_opts:
+  introns: yes
+  downsampling: '0'
+  strand: 0
+  Ham_Dist: 0
+  velocyto: no
+  primaryHit: yes
+  twoPass: yes
+make_stats: yes
+which_Stage: Filtering
+Rscript_exec: Rscript
+STAR_exec: STAR
+pigz_exec: pigz
+samtools_exec: samtools
