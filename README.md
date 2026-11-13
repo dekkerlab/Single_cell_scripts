@@ -13,3 +13,4 @@ The repository is organized into four directories: Hi-C_Fig1_3, Image_Fig2_3_4 a
 Work in Progress
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
